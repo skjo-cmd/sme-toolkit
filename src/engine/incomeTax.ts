@@ -88,7 +88,7 @@ export function calcIncomeTax(input: IncomeTaxInput, rates: Rates): IncomeTaxRes
     taxableBase, computedTax, marginalRate, perBracket, pensionCreditRate, pensionCredit, standardCredit, eFilingCredit,
     determinedTax, localTax, totalTax, payable, effectiveRate, steps,
     notCovered: [
-      "추계(단순경비율·기준경비율) 세액. 이 도구는 기장(실제 경비) 기준만 계산한다. 적용 요건은 아래 판정 참고",
+      "추계(단순경비율·기준경비율) 세액. 이 도구는 기장(실제 경비) 기준만 계산하며, 적용 요건은 위 판정표로 확인합니다",
       "성실신고확인비용 세액공제, 기장세액공제(간편장부 대상자 복식기장 시 20%)",
       "근로·연금·금융·기타소득과의 합산, 금융소득 2,000만 원 초과 종합과세",
       "자녀세액공제, 특별세액공제(보험료·의료비·교육비·기부금) 세부 계산",

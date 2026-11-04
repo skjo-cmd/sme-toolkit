@@ -50,7 +50,7 @@ export function calcSeverance(input: SeveranceInput): SeveranceResult {
 
   const steps: Step[] = [
     { label: "재직일수", value: serviceDays, unit: "일", formula: `${input.leaveDate} − ${input.hireDate}` },
-    { label: "산정 기간 시작일 기준 총일수", value: periodDays, unit: "일", formula: `${fmt(start)} ~ ${input.leaveDate} 전일` },
+    { label: "평균임금 산정 기간(퇴직 전 3개월) 총일수", value: periodDays, unit: "일", formula: `${fmt(start)} ~ ${input.leaveDate} 전일` },
     { label: "3개월 임금 총액(상여·연차수당 3/12 포함)", value: won(wageBase), unit: "원", formula: "3개월 임금 + 연 상여 × 3/12 + 연차수당 × 3/12" },
     { label: "1일 평균임금", value: Math.round(averageDailyWage * 100) / 100, unit: "원", formula: "임금 총액 ÷ 총일수" },
     { label: "적용 1일 임금", value: Math.round(appliedDailyWage * 100) / 100, unit: "원", note: usedOrdinaryWage ? "평균임금이 통상임금보다 낮아 통상임금 적용(근로기준법 제2조 제2항)" : "평균임금 적용" },

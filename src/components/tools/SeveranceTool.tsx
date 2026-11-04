@@ -24,7 +24,7 @@ export default function SeveranceTool() {
           <NumberField label="둘째 달 임금" value={s.m2} onChange={(v) => set({ ...s, m2: v })} />
           <NumberField label="셋째 달 임금" value={s.m3} onChange={(v) => set({ ...s, m3: v })} />
           <NumberField label="퇴직 전 1년간 상여금 총액" value={s.bonus} onChange={(v) => set({ ...s, bonus: v })} hint="3/12만 반영" />
-          <NumberField label="퇴직 전 1년간 연차수당" value={s.leavePay} onChange={(v) => set({ ...s, leavePay: v })} hint="전전년도 발생분 수당. 3/12만 반영" />
+          <NumberField label="퇴직 전 1년간 연차수당" value={s.leavePay} onChange={(v) => set({ ...s, leavePay: v })} hint="퇴직 전 1년간 지급된 연차수당. 3/12만 반영" />
           <NumberField label="1일 통상임금(선택)" value={s.ordinary} onChange={(v) => set({ ...s, ordinary: v })} hint="월 통상임금 ÷ 209 × 8. 모르면 비워 두세요" />
         </div>
       </div>

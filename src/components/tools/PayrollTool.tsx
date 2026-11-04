@@ -1,6 +1,7 @@
 "use client";
 import rates from "@/rates/2026.json";
 import { calcPayroll, type EmployerUnempTier } from "@/engine/payroll";
+import { pctStr } from "@/engine/types";
 import { Actions, Badges, Basis, CheckField, NotCovered, NumberField, Plain, SelectField, Steps, fmt, useShared } from "@/lib/ui";
 
 type S = { basePay: number; meal: number; vehicle: number; other: number; tier: EmployerUnempTier; preset: string; customRate: number };
@@ -45,7 +46,7 @@ export default function PayrollTool() {
         <table>
           <thead><tr><th>항목</th><th className="num">근로자</th><th className="num">사업주</th></tr></thead>
           <tbody>
-            <tr><td>국민연금 ({np.employee_rate * 100}% / {np.employer_rate * 100}%)</td><td className="num">{fmt(r.employee.pension)}</td><td className="num">{fmt(r.employer.pension)}</td></tr>
+            <tr><td>{`국민연금 (${pctStr(np.employee_rate)}% / ${pctStr(np.employer_rate)}%)`}</td><td className="num">{fmt(r.employee.pension)}</td><td className="num">{fmt(r.employer.pension)}</td></tr>
             <tr><td>건강보험 (3.595% 각)</td><td className="num">{fmt(r.employee.health)}</td><td className="num">{fmt(r.employer.health)}</td></tr>
             <tr><td>장기요양 (건보의 13.14%)</td><td className="num">{fmt(r.employee.care)}</td><td className="num">{fmt(r.employer.care)}</td></tr>
             <tr><td>고용보험</td><td className="num">{fmt(r.employee.unemployment)}</td><td className="num">{fmt(r.employer.unemployment)}</td></tr>

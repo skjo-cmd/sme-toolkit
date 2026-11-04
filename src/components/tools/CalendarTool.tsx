@@ -53,7 +53,7 @@ export default function CalendarTool() {
       ) : null)}
 
       <Actions link={link} />
-      <p className="muted">{cal.source}. 지방세(재산세·자동차세 등)와 수입 통관 일정은 포함하지 않습니다.</p>
+      <p className="muted">{cal.source} 지방세(재산세·자동차세 등)와 수입 통관 일정은 포함하지 않습니다.</p>
     </>
   );
 }

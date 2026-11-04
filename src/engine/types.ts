@@ -17,6 +17,8 @@ export interface Bracket {
 }
 
 export const won = (n: number) => Math.round(n);
+/** 비율을 퍼센트 문자열로. 부동소수점 꼬리 제거 (0.009 → "0.9") */
+export const pctStr = (r: number) => String(Number((r * 100).toFixed(4)));
 /** 공단 고지 기준: 10원 미만 절사 */
 export const floor10 = (n: number) => Math.floor(Math.round(n) / 10) * 10;
 
