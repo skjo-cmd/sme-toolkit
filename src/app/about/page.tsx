@@ -21,7 +21,7 @@ export default function Page() {
       <div className="card">
         <h3>숫자가 틀렸다면</h3>
         <p>산식과 상수는 전부 공개되어 있습니다. 계산 과정 펼침에서 어느 줄이 틀렸는지 짚어 주시면 가장 빠릅니다. 세율표 페이지의 출처 조문과 대조해 확인한 뒤, 변경 이력에 날짜와 함께 반영합니다.</p>
-        <p className="muted">제보처: 저장소 이슈 또는 자문 미팅에서 직접. (공개 저장소 주소는 파일럿 뒤 게시)</p>
+        <p className="muted">제보처: <a href="https://github.com/skjo-cmd/sme-toolkit/issues">github.com/skjo-cmd/sme-toolkit/issues</a> 또는 자문 미팅에서 직접. 산식과 상수는 같은 저장소에서 볼 수 있습니다.</p>
       </div>
     </>
   );
