@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers 정적 자산 배포 설정. `npm run build` 뒤 `npx wrangler deploy`.
+  // Pages 프로젝트로 연결할 때는 이 파일이 무시되고 출력 폴더 out/ 만 쓰인다.
+  "name": "sme-toolkit",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
