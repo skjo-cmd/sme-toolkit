@@ -1,0 +1,34 @@
+{
+  "year": 2026,
+  "source": "국세청 세금신고 일정(2026) 및 각 세법 신고기한 조문. 공휴일 목록은 관보 대조 필요(last_reviewed 2026-11-05)",
+  "holidays": [
+    "2026-01-01", "2026-02-16", "2026-02-17", "2026-02-18", "2026-03-02", "2026-05-05", "2026-05-25",
+    "2026-06-03", "2026-06-06", "2026-08-17", "2026-09-24", "2026-09-25", "2026-09-26", "2026-10-05",
+    "2026-10-09", "2026-12-25"
+  ],
+  "items": [
+    { "month": 1, "day": 10, "title": "원천세 반기납부(2025년 하반기분)", "who": ["common"], "cond": { "withholdingHalf": true }, "basis": "소득세법 제128조 제2항" },
+    { "month": 1, "day": 25, "title": "부가가치세 확정신고·납부(2025년 2기)", "who": ["common"], "cond": { "vat": ["general"] }, "basis": "부가가치세법 제49조" },
+    { "month": 1, "day": 25, "title": "부가가치세 신고·납부(2025년 간이과세, 연 1회)", "who": ["individual"], "cond": { "vat": ["simplified"] }, "basis": "부가가치세법 제67조" },
+    { "month": 2, "day": 10, "title": "면세사업자 사업장현황신고", "who": ["individual"], "cond": { "vat": ["exempt"] }, "basis": "소득세법 제78조", "note": "2월 10일 기한" },
+    { "month": 3, "day": 10, "title": "근로·사업·퇴직소득 지급명세서 제출(2025년 귀속)", "who": ["common"], "basis": "소득세법 제164조" },
+    { "month": 3, "day": 10, "title": "근로소득 연말정산 결과 원천세 신고(2월분)", "who": ["common"], "basis": "소득세법 제137조" },
+    { "month": 3, "day": 31, "title": "법인세 신고·납부(12월 결산법인)", "who": ["corporate"], "cond": { "fiscalMonth": 12 }, "basis": "법인세법 제60조" },
+    { "month": 4, "day": 25, "title": "부가가치세 예정신고·납부(1기 예정)", "who": ["corporate"], "cond": { "vat": ["general"] }, "basis": "부가가치세법 제48조", "note": "개인 일반과세자는 예정고지(4/25 납부), 직전기 대비 실적 1/3 미만이면 신고 선택 가능" },
+    { "month": 4, "day": 30, "title": "법인세 신고 연장분(성실신고확인 대상 법인)", "who": ["corporate"], "cond": { "faithful": true, "fiscalMonth": 12 }, "basis": "법인세법 제60조 제1항 단서" },
+    { "month": 5, "day": 31, "title": "종합소득세 확정신고·납부(2025년 귀속)", "who": ["individual"], "cond": { "faithful": false }, "basis": "소득세법 제70조" },
+    { "month": 6, "day": 30, "title": "종합소득세 신고 연장분(성실신고확인 대상)", "who": ["individual"], "cond": { "faithful": true }, "basis": "소득세법 제70조의2" },
+    { "month": 7, "day": 10, "title": "원천세 반기납부(2026년 상반기분)", "who": ["common"], "cond": { "withholdingHalf": true }, "basis": "소득세법 제128조 제2항" },
+    { "month": 7, "day": 25, "title": "부가가치세 확정신고·납부(2026년 1기)", "who": ["common"], "cond": { "vat": ["general"] }, "basis": "부가가치세법 제49조" },
+    { "month": 7, "day": 25, "title": "간이과세자 예정부과 납부(상반기분)", "who": ["individual"], "cond": { "vat": ["simplified"] }, "basis": "부가가치세법 제66조" },
+    { "month": 8, "day": 31, "title": "법인세 중간예납 신고·납부(12월 결산법인)", "who": ["corporate"], "cond": { "fiscalMonth": 12 }, "basis": "법인세법 제63조" },
+    { "month": 10, "day": 25, "title": "부가가치세 예정신고·납부(2기 예정)", "who": ["corporate"], "cond": { "vat": ["general"] }, "basis": "부가가치세법 제48조", "note": "개인 일반과세자는 예정고지" },
+    { "month": 11, "day": 30, "title": "종합소득세 중간예납 납부", "who": ["individual"], "basis": "소득세법 제65조", "note": "고지서 납부. 상반기 실적이 직전연도의 30% 미만이면 추계액 신고 가능" },
+    { "month": 12, "day": 31, "title": "연말 결산 준비·소득공제 항목 납입 마감(노란우산·연금계좌)", "who": ["common"], "basis": "조세특례제한법 제86조의3, 소득세법 제59조의3" }
+  ],
+  "monthly": [
+    { "day": 10, "title": "원천세 신고·납부(전월 지급분)", "who": ["common"], "cond": { "withholdingHalf": false }, "basis": "소득세법 제128조" },
+    { "day": 10, "title": "4대보험료 납부(전월분 고지)", "who": ["common"], "basis": "보험료징수법 제16조의7" },
+    { "day": 15, "title": "4대보험 자격취득·상실 신고(입·퇴사 다음 달 15일까지)", "who": ["common"], "basis": "국민연금법 시행규칙, 건강보험법 시행규칙" }
+  ]
+}
