@@ -22,7 +22,15 @@
  경영 도구함 (sme-toolkit)- 입력은 타이핑 즉시 반영. 포커스 이탈 시 반영 금지.
  경영 도구함 (sme-toolkit)- 외부 스크립트·폰트·분석 도구 없음. 공유 링크는 URL 해시에 입력값만 담는다.
  경영 도구함 (sme-toolkit)
- 경영 도구함 (sme-toolkit)## 명령
+ 경영 도구함 (sme-toolkit)## 배포 경로
+
+닥터J커브 사이트(https://drjcurve.netlify.app)의 `/toolkit/` 아래에서 서비스된다.
+- `next.config.ts`의 `basePath: "/toolkit"` 때문에 모든 링크·자산은 `/toolkit/...` 로 생성된다.
+- `npm run build`가 `out/`을 `dist/toolkit/`으로 옮기고, `dist/_redirects`로 루트를 `/toolkit/`에 보낸다. Cloudflare Workers 자산 디렉터리는 `dist/`.
+- Netlify(닥터J커브)는 `/toolkit/*`를 이 Worker로 프록시한다(`netlify.toml`). 따라서 workers.dev 주소와 drjcurve 주소 양쪽에서 같은 경로로 열린다.
+- 상위 브랜드 링크·배너 주소는 `src/lib/brand.ts` 한 곳에서 관리한다.
+
+## 명령
  경영 도구함 (sme-toolkit)
  경영 도구함 (sme-toolkit)```bash
  경영 도구함 (sme-toolkit)npm install

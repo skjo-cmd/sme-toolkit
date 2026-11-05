@@ -3,9 +3,10 @@ import Link from "next/link";
 import "./pretendard.css";
 import "./globals.css";
 import rates from "@/rates/2026.json";
+import { brand } from "@/lib/brand";
 
 export const metadata: Metadata = {
-  title: { default: "경영 도구함", template: "%s | 경영 도구함" },
+  title: { default: "경영 도구함 | 닥터J커브", template: "%s | 경영 도구함" },
   description: "창업기업·중소기업·소상공인을 위한 세무·노무 계산기와 체크리스트. 산식과 법령 근거를 전부 공개하고, 입력값은 서버로 보내지 않습니다.",
 };
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <header className="site">
           <div className="in">
+            <a href={brand.url} className="parent">{brand.name}</a>
             <Link href="/" className="brand">경영 도구함</Link>
             <nav>
               <Link href="/tools/payroll-cost/">인건비</Link>
@@ -28,6 +30,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
         <main>{children}</main>
+        <aside className="brand-banner noprint" aria-label="닥터J커브 안내">
+          <div className="in">
+            <div>
+              <strong>{brand.tagline}</strong>
+              <span>이 도구함은 {brand.name}가 운영합니다. 무료 자료로 첫걸음을 시작해 보세요.</span>
+            </div>
+            <a className="cta" href={brand.leadMagnetUrl}>무료 자료 받기</a>
+          </div>
+        </aside>
         <footer className="site">
           <div className="in">
             <p>본 사이트는 경영자문 참고용 계산·정보를 제공합니다. 세무대리·노무대리·법률사무는 각 자격사의 업무이며, 개별 신고·판단은 세무사·공인노무사·변호사와 확인하십시오. 입력값은 서버로 전송되지 않고 브라우저 안에서만 계산됩니다.</p>
