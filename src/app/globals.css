@@ -80,7 +80,15 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 td.f { color: var(--muted); font-size: 0.85rem; }
 /* 키-값 표: 첫 열은 줄바꿈 없이 내용 폭만 차지 */
 table.kv th:first-child, table.kv td:first-child { white-space: nowrap; width: 1%; padding-right: 18px; font-weight: 600; }
-table.kv td:nth-child(2) { white-space: normal; }
+table.kv td:nth-child(2) { white-space: normal; min-width: 12em; }
+@media (max-width: 600px) {
+  /* 좁은 화면: 키-값 표를 2열 격자로. 첫 열은 한 줄, 값과 비고는 오른쪽에 위아래로 */
+  table.kv, table.kv tbody { display: block; }
+  table.kv tr { display: grid; grid-template-columns: max-content 1fr; column-gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  table.kv tr:last-child { border-bottom: none; }
+  table.kv td { border-bottom: none; padding: 0; min-width: 0; }
+  table.kv td:nth-child(3) { grid-column: 2; }
+}
 tbody tr:last-child th { background: var(--accent-soft); }
 
 details { margin: 16px 0; border: 1px solid var(--line); border-radius: var(--radius); padding: 0 16px; background: var(--surface); }
