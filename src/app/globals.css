@@ -51,7 +51,7 @@ h3 { font-size: 1.05rem; margin: 20px 0 8px; font-weight: 700; }
 .badge.level { background: var(--accent); color: #fff; border-color: transparent; }
 .badge.proposed { background: var(--warn-bg); color: var(--warn-text); border-color: transparent; }
 
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; margin: 16px 0; box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; margin: 16px 0; box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04); overflow-x: auto; }
 .card:has(.field) { background: var(--surface-2); }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 18px; }
 
@@ -78,6 +78,9 @@ th { background: var(--surface-2); font-weight: 700; }
 th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 td.f { color: var(--muted); font-size: 0.85rem; }
+/* 키-값 표: 첫 열은 줄바꿈 없이 내용 폭만 차지 */
+table.kv th:first-child, table.kv td:first-child { white-space: nowrap; width: 1%; padding-right: 18px; font-weight: 600; }
+table.kv td:nth-child(2) { white-space: normal; }
 tbody tr:last-child th { background: var(--accent-soft); }
 
 details { margin: 16px 0; border: 1px solid var(--line); border-radius: var(--radius); padding: 0 16px; background: var(--surface); }
