@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import "./pretendard.css";
 import "./globals.css";
 import rates from "@/rates/2026.json";
 

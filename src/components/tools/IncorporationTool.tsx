@@ -32,8 +32,8 @@ export default function IncorporationTool() {
       <div className="result">
         <div className="kpi"><div className="k">개인 유지 총부담</div><div className="v">{fmtMan(r.individual.total)}</div></div>
         <div className="kpi"><div className="k">법인 전환 총부담(유지비 포함)</div><div className="v">{fmtMan(r.corporate.total)}</div></div>
-        <div className="kpi"><div className="k">연간 차이</div><div className="v">{favorable ? "법인 유리 " : "개인 유리 "}{fmtMan(Math.abs(r.diffTotal))}</div></div>
-        <div className="kpi"><div className="k">5년 누적</div><div className="v">{fmtMan(Math.abs(r.fiveYearDiff))}</div></div>
+        <div className={`kpi ${favorable ? "good" : "bad"}`}><div className="k">연간 차이</div><div className="v">{favorable ? "법인 유리 " : "개인 유리 "}{fmtMan(Math.abs(r.diffTotal))}</div></div>
+        <div className={`kpi ${favorable ? "good" : "bad"}`}><div className="k">5년 누적</div><div className="v">{fmtMan(Math.abs(r.fiveYearDiff))}</div></div>
       </div>
 
       {r.retainedWarning && (
@@ -45,9 +45,9 @@ export default function IncorporationTool() {
         <table>
           <thead><tr><th>배당 비율</th><th className="num">법인 총부담</th><th className="num">개인 대비</th><th>해석</th></tr></thead>
           <tbody>
-            <tr><td>0% (전액 유보)</td><td className="num">{fmtMan(r0.corporate.total)}</td><td className="num">{r0.diffTotal >= 0 ? "법인 유리 " : "개인 유리 "}{fmtMan(Math.abs(r0.diffTotal))}</td><td className="f">세금은 적지만 돈은 법인에 묶임</td></tr>
-            <tr><td>{s.dividend}% (입력값)</td><td className="num">{fmtMan(r.corporate.total)}</td><td className="num">{r.diffTotal >= 0 ? "법인 유리 " : "개인 유리 "}{fmtMan(Math.abs(r.diffTotal))}</td><td className="f"></td></tr>
-            <tr><td>100% (전액 인출)</td><td className="num">{fmtMan(r100.corporate.total)}</td><td className="num">{r100.diffTotal >= 0 ? "법인 유리 " : "개인 유리 "}{fmtMan(Math.abs(r100.diffTotal))}</td><td className="f">개인사업자와 같은 조건으로 다 가져갈 때</td></tr>
+            <tr><td>0% (전액 유보)</td><td className="num">{fmtMan(r0.corporate.total)}</td><td className="num"><span className={r0.diffTotal >= 0 ? "tag-good" : "tag-bad"}>{r0.diffTotal >= 0 ? "법인 유리 " : "개인 유리 "}</span>{fmtMan(Math.abs(r0.diffTotal))}</td><td className="f">세금은 적지만 돈은 법인에 묶임</td></tr>
+            <tr><td>{s.dividend}% (입력값)</td><td className="num">{fmtMan(r.corporate.total)}</td><td className="num"><span className={r.diffTotal >= 0 ? "tag-good" : "tag-bad"}>{r.diffTotal >= 0 ? "법인 유리 " : "개인 유리 "}</span>{fmtMan(Math.abs(r.diffTotal))}</td><td className="f"></td></tr>
+            <tr><td>100% (전액 인출)</td><td className="num">{fmtMan(r100.corporate.total)}</td><td className="num"><span className={r100.diffTotal >= 0 ? "tag-good" : "tag-bad"}>{r100.diffTotal >= 0 ? "법인 유리 " : "개인 유리 "}</span>{fmtMan(Math.abs(r100.diffTotal))}</td><td className="f">개인사업자와 같은 조건으로 다 가져갈 때</td></tr>
           </tbody>
         </table>
       </div>
